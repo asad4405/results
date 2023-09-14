@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[ResultController::class,'result'])->name('result');
+Route::post('/result/submit',[ResultController::class,'result_submit'])->name('result.submit');
+
+Route::resource('student',StudentController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
