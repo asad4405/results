@@ -11,7 +11,7 @@
             @endif
 
             <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-12">
+                <div class="col-md-6 col-lg-10">
                     <div class="card mb-4">
                         <h5 class="card-header">All Students</h5>
                         <div class="card-body">
@@ -20,29 +20,22 @@
                                     <thead>
                                         <tr class="table table-primary">
                                             <th>SL</th>
-                                            <th>Student Name</th>
-                                            <th>Class</th>
-                                            <th>Phone Number</th>
+                                            <th>Subject Name</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($students as $student)
+                                        @forelse ($subjects as $subject)
                                             <tr class="">
                                                 <td>{{ $loop->index + 1 }}</td>
-                                                <td>{{ $student->student_name }}</td>
-                                                <td>{{ $student->class_name }}</td>
-                                                <td>{{ $student->phone_number }}</td>
+                                                <td>{{ $subject->subject_name }}</td>
                                                 <td>
-                                                    <a href="{{ route('student.show', $student->id) }}"
-                                                        class="btn btn-sm bg-success text-white">
-                                                        Show
-                                                    </a>
-                                                    <a href="{{ route('student.edit', $student->id) }}"
+                                                    <a href="{{ route('subject.edit', $subject->id) }}"
                                                         class="btn btn-sm bg-info text-white">
                                                         Edit
                                                     </a>
-                                                    <form action="{{ route('student.destroy',$student->id) }}" method="POST" style="display: inline-block">
+                                                    <form action="{{ route('subject.destroy', $subject->id) }}"
+                                                        method="POST" style="display: inline-block">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm bg-danger text-white">
@@ -64,4 +57,5 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

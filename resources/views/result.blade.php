@@ -22,16 +22,16 @@
                                 <div class="col-8">
                                     <select name="exam" class="form-select @error('exam') is-invalid @enderror">
                                         <option value="">Choose One</option>
-                                        <option value="one">Class One</option>
-                                        <option value="two">Class Two</option>
-                                        <option value="three">Class Three</option>
-                                        <option value="four">Class Four</option>
-                                        <option value="five">Class Five</option>
-                                        <option value="six">Class Six</option>
-                                        <option value="seven">Class Seven</option>
-                                        <option value="eight">Class Eight</option>
-                                        <option value="nine">Class Nine</option>
-                                        <option value="ten">Class Ten</option>
+                                        <option value="ONE">Class One</option>
+                                        <option value="TWO">Class Two</option>
+                                        <option value="THREE">Class Three</option>
+                                        <option value="FOUR">Class Four</option>
+                                        <option value="FIVE">Class Five</option>
+                                        <option value="SIX">Class Six</option>
+                                        <option value="SEVEN">Class Seven</option>
+                                        <option value="EIGHT">Class Eight</option>
+                                        <option value="NINE">Class Nine</option>
+                                        <option value="TEN">Class Ten</option>
                                     </select>
                                     @error('exam')
                                         <div class="text-danger">{{ $message }}</div>
@@ -67,7 +67,7 @@
                                     </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="number" class="form-control @error('roll_no') is-invalid @enderror" name="roll_no">
+                                    <input type="number" name="roll_no" class="form-control @error('roll_no') is-invalid @enderror" name="roll_no">
                                     @error('roll_no')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -81,7 +81,7 @@
                                     </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="number" class="form-control @error('reg_no') is-invalid @enderror" name="reg_no">
+                                    <input type="number" name="reg_no" class="form-control @error('reg_no') is-invalid @enderror" name="reg_no">
                                     @error('reg_no')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
